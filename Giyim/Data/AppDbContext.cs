@@ -4,6 +4,7 @@ namespace Giyim.Data
 {
     public class AppDbContext : DbContext
     {
+        public DbSet<Giyim.Models.UrunResmi> UrunResmi { get; set; } = default!;
         public AppDbContext(DbContextOptions options) : base(options)
         {
         }

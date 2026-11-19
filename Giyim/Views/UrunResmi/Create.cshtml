@@ -1,0 +1,48 @@
+@model Giyim.Models.UrunResmi
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>UrunResmi</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="ResimYolu" class="control-label"></label>
+                <input asp-for="ResimYolu" class="form-control" />
+                <span asp-validation-for="ResimYolu" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="AnaResimMi" class="control-label"></label>
+                <input asp-for="AnaResimMi" class="form-check-input" />
+                <span asp-validation-for="AnaResimMi" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="UrunId" class="control-label"></label>
+                <input asp-for="UrunId" class="form-control" />
+                <span asp-validation-for="UrunId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Urun" class="control-label"></label>
+                <input asp-for="Urun" class="form-control" />
+                <span asp-validation-for="Urun" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,42 @@
+@model Giyim.Models.Renk
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Renk</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="RenkAdi" class="control-label"></label>
+                <input asp-for="RenkAdi" class="form-control" />
+                <span asp-validation-for="RenkAdi" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="RenkKodu" class="control-label"></label>
+                <input asp-for="RenkKodu" class="form-control" />
+                <span asp-validation-for="RenkKodu" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Varyantlar" class="control-label"></label>
+                <input asp-for="Varyantlar" class="form-control" />
+                <span asp-validation-for="Varyantlar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

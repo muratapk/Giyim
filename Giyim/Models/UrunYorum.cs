@@ -17,6 +17,6 @@
 
         public string KullaniciId { get; set; } = "";
 
-        public ApplicationUser? Kullanici { get; set; }
+        
     }
 }

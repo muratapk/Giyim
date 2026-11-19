@@ -1,0 +1,69 @@
+@model Giyim.Models.UrunVaryanti
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>UrunVaryanti</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="StokKodu" class="control-label"></label>
+                <input asp-for="StokKodu" class="form-control" />
+                <span asp-validation-for="StokKodu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StokMiktari" class="control-label"></label>
+                <input asp-for="StokMiktari" class="form-control" />
+                <span asp-validation-for="StokMiktari" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UrunId" class="control-label"></label>
+                <input asp-for="UrunId" class="form-control" />
+                <span asp-validation-for="UrunId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Urun" class="control-label"></label>
+                <input asp-for="Urun" class="form-control" />
+                <span asp-validation-for="Urun" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BedenId" class="control-label"></label>
+                <input asp-for="BedenId" class="form-control" />
+                <span asp-validation-for="BedenId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Beden" class="control-label"></label>
+                <input asp-for="Beden" class="form-control" />
+                <span asp-validation-for="Beden" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RenkId" class="control-label"></label>
+                <input asp-for="RenkId" class="form-control" />
+                <span asp-validation-for="RenkId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Renk" class="control-label"></label>
+                <input asp-for="Renk" class="form-control" />
+                <span asp-validation-for="Renk" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

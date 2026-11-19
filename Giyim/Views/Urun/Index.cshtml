@@ -1,0 +1,107 @@
+@model IEnumerable<Giyim.Models.Urun>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UrunAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fiyat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IndirimliFiyat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AktifMi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EklenmeTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KategoriId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kategori)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MarkaId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marka)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UrunResimleri)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Varyantlar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Yorumlar)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.UrunAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Aciklama)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Fiyat)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.IndirimliFiyat)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.AktifMi)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.EklenmeTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.KategoriId)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Kategori)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.MarkaId)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Marka)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.UrunResimleri)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Varyantlar)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Yorumlar)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
