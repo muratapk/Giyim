@@ -1,8 +1,11 @@
-﻿namespace Giyim.Models
+﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
+
+namespace Giyim.Models
 {
     public class SiparisDetay
     {
-        
+        [Key]
             public int Id { get; set; }
 
             public int SiparisId { get; set; }

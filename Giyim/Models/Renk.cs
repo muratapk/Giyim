@@ -1,7 +1,10 @@
-﻿namespace Giyim.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Giyim.Models
 {
     public class Renk
     {
+        [Key]
         public int Id { get; set; }
 
         public string RenkAdi { get; set; } = "";

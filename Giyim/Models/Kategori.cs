@@ -4,6 +4,7 @@ namespace Giyim.Models
 {
     public class Kategori
     {
+        [Key]
         public int Id { get; set; }
 
         [Required, StringLength(100)]

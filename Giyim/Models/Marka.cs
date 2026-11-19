@@ -4,8 +4,7 @@ namespace Giyim.Models
 {
     public class Marka
     {
-        public class Marka
-        {
+        [Key]
             public int Id { get; set; }
 
             [Required, StringLength(100)]
@@ -13,6 +12,6 @@ namespace Giyim.Models
 
             public ICollection<Urun> Urunler { get; set; }
                 = new List<Urun>();
-        }
+       
     }
 }
