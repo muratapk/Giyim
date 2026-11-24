@@ -7,17 +7,21 @@ using Giyim.Data;
 public class KategoriController : Controller
 {
     private readonly AppDbContext _context;
-
+    //oluşturulacak database context nesnesi ile controller nesnesi oluşturuluyor
+    //int i;
+    //i=1
     public KategoriController(AppDbContext context)
     {
         _context = context;
     }
-
+    //costructor ile controller nesnesi oluşturulurken database context nesnesi de oluşturuluyor ve _context değişkenine atanıyor
     // GET: KATEGORIS
     public async Task<IActionResult> Index()    
     {
         return View(await _context.Kategoriler.ToListAsync());
     }
+    //_context.Kategoriler.ToList() 
+    //veritabanındaki Kategoriler tablosundaki tüm verileri listeleyen bir action method. Bu method, veritabanındaki Kategoriler tablosundaki tüm verileri asenkron olarak alır ve Index view'ına gönderir.
 
     // GET: KATEGORIS/Details/5
     public async Task<IActionResult> Details(int? id)

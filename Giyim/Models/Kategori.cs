@@ -7,7 +7,8 @@ namespace Giyim.Models
         [Key]
         public int Id { get; set; }
 
-        [Required, StringLength(100)]
+        [StringLength(100)]
+        [Required(ErrorMessage = "Kategori adı boş geçilemez.")]
         public string KategoriAdi { get; set; } = "";
 
         public int? UstKategoriId { get; set; }

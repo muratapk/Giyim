@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Giyim.Models.Renk>
+
+<h2>Renk Listesi</h2>
+
+<a asp-action="Create" class="btn btn-primary mb-3">
+    Yeni Renk Ekle
+</a>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Renk Adı</th>
+            <th>Renk Kodu</th>
+            <th>Düzelt</th>
+            <th>Silme</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.RenkAdi</td>
+                <td>@item.RenkKodu</td>
+
+                <td>
+                    <a asp-action="Edit"
+                       asp-route-id="@item.Id"
+                       class="btn btn-warning">
+                        Düzelt
+                    </a>
+                </td>
+
+                <td>
+                    <a asp-action="Delete"
+                       asp-route-id="@item.Id"
+                       class="btn btn-danger">
+                        Sil
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
