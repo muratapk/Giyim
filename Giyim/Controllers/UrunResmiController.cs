@@ -48,8 +48,28 @@ public class UrunResmiController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Id,ResimYolu,AnaResimMi,UrunId,Urun")] UrunResmi urunresmi)
+    public async Task<IActionResult> Create([Bind("Id,ResimYolu,AnaResimMi,UrunId,Urun")] UrunResmi urunresmi,IFormFile PicturePath)
     {
+        //dosya yok ise veya dosya boyutu 0 ise
+        if (PicturePath != null && PicturePath.Length > 0)
+        {
+            //dosya boş değilse, dosyayı kaydetmek için gerekli işlemleri yap boyutu
+            var fileName = Path.GetFileName(PicturePath.FileName);
+            //dosya adını al
+            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", fileName);
+            //dosya yolunu oluştur 
+            //Directory.GetCurrentDirectory() ile projenin kök dizinini alıyoruz
+            //ve "wwwroot/uploads" klasörüne dosya adını ekliyoruz.
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await PicturePath.CopyToAsync(stream);
+            }
+            //stream ile dosyayı oluştur ve PicturePath dosyasını stream'e kopyala
+            //dosya yolunu veritabanına kaydet
+            urunresmi.ResimYolu = "/uploads/" + fileName;
+            //urunresmi nesnesinin ResimYolu özelliğine dosya yolunu kaydet
+        }
+
         if (ModelState.IsValid)
         {
             _context.Add(urunresmi);

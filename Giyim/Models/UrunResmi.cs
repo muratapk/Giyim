@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Giyim.Models
 {
@@ -13,6 +14,9 @@ namespace Giyim.Models
 
         public int UrunId { get; set; }
 
-        public Urun? Urun { get; set; }
+        public virtual Urun? Urun { get; set; }
+        [NotMapped]
+        //bunu database dosyasına ekleme 
+        public IFormFile? PicturePath { get; set; }
     }
 }
